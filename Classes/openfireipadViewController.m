@@ -101,7 +101,7 @@
 	[self setIntroText];
 	[self resetships];
 	[self countdown];
-
+    
 }
 
 -(IBAction)exitButtonPressed:(id)sender{
@@ -451,7 +451,7 @@
 	if (wpi == 0){
 		spawnx = ((p*)[pry objectAtIndex:1]).l.x;	
 	}else{
-			spawnx = ((p*)[pry objectAtIndex:0]).l.x;	
+        spawnx = ((p*)[pry objectAtIndex:0]).l.x;	
 	}
 	
 	if (fabsf(spawnx - 0) <= fabsf(spawnx - 768)){
@@ -564,9 +564,9 @@
 			}else{
 				((p*)[pry objectAtIndex:0]).l = CGPointMake( ((p*)[pry objectAtIndex:0]).l.x,1124);				
 				if (wb.k == 2){
-				p11label.text = @"OBLITERATED";
+                    p11label.text = @"OBLITERATED";
 				}else{
-				p11label.text = @"INCINERATED";	
+                    p11label.text = @"INCINERATED";	
 				}
 				p22label.text = @"VICTORY";				
 				killlabel1.text = @"";
@@ -678,7 +678,7 @@
 
 -(void)firebullet:(p*)wp :(bul*)wb{
 	//	wp.weapon = 1;
-
+    
 	wb.radius = 45;
 	
 	wb.k = wp.weapon;
@@ -949,24 +949,24 @@
 	if (gamestate == 1){
 		
 		if (wp.weapon > 0){
-				wp.repeat--;
-				if (wp.repeat <= 0){
-					wp.repeat = wp.repeatreset;
-					if (wp.weapon == 1){
-						wp.freezetime = weapon1freeze;
-					}
-					if (wp.weapon == 2){
-						wp.freezetime = weapon1freeze;
-					}
-					[self getnb];
-					if (nb > -1 ){
-						((bul*)[bry objectAtIndex:nb]).index = nb;
-						
-						[self firebullet:(wp) :( ((bul*)[bry objectAtIndex:nb]) )];
-					}
-				}
-			}
-	
+            wp.repeat--;
+            if (wp.repeat <= 0){
+                wp.repeat = wp.repeatreset;
+                if (wp.weapon == 1){
+                    wp.freezetime = weapon1freeze;
+                }
+                if (wp.weapon == 2){
+                    wp.freezetime = weapon1freeze;
+                }
+                [self getnb];
+                if (nb > -1 ){
+                    ((bul*)[bry objectAtIndex:nb]).index = nb;
+                    
+                    [self firebullet:(wp) :( ((bul*)[bry objectAtIndex:nb]) )];
+                }
+            }
+        }
+        
 		
 	}
 	
@@ -1058,68 +1058,68 @@
 		gamestatetick--;
 		if (gamestatetick == 0){
 			p1label.alpha = 0;
-						p11label.alpha = 0;
-						p111label.alpha = 0;
-						p2label.alpha = 0;
-						p22label.alpha = 0;
-						p222label.alpha = 0;
+            p11label.alpha = 0;
+            p111label.alpha = 0;
+            p2label.alpha = 0;
+            p22label.alpha = 0;
+            p222label.alpha = 0;
 			[self readygame];	
 			
 		}
 	}
 	
 	
-//	if (gamestate == 1 || gamestate == 3){
-		
-		//		if ( ((p*)[pry objectAtIndex:0]).l.y < weapon1dist){
-		//			((p*)[pry objectAtIndex:0]).weapon = 0;
-		//		}
-		//		if ( ((p*)[pry objectAtIndex:0]).l.y < weapon1dist){
-		//			((p*)[pry objectAtIndex:0]).weapon = 0;
-		//		}
-		//		if ( ((p*)[pry objectAtIndex:0]).l.y < weapon1dist){
-		//			((p*)[pry objectAtIndex:0]).weapon = 0;
-		//		}
-		
-		[self playerloop:((p*)[pry objectAtIndex:0])];
- 		((UIImageView*)[pdry objectAtIndex:0]).center = ((p*)[pry objectAtIndex:0]).l;
-		self.shipexhaust1.center = CGPointMake( ((p*)[pry objectAtIndex:0]).l.x, ((p*)[pry objectAtIndex:0]).l.y+40);
-		self.shipexhaust1.image = ((UIImageView *)[thrustrefarray objectAtIndex:((p*)[pry objectAtIndex:0]).cthrustanimf]).image;
-		
-		self.shipexhaust1.transform = CGAffineTransformConcat(
-															  
-															  CGAffineTransformMakeScale(3, 3)
-															  
-															  , CGAffineTransformMakeRotation(-deg90));
-		
-		
-		
-		[self playerloop:((p*)[pry objectAtIndex:1])];		
-		((UIImageView*)[pdry objectAtIndex:1]).center = ((p*)[pry objectAtIndex:1]).l;		
-		
-		self.shipexhaust2.center = CGPointMake( ((p*)[pry objectAtIndex:1]).l.x, ((p*)[pry objectAtIndex:1]).l.y-40);
-		self.shipexhaust2.image = ((UIImageView *)[thrustrefarray objectAtIndex:((p*)[pry objectAtIndex:1]).cthrustanimf+30]).image;
-		
-		self.shipexhaust2.transform = CGAffineTransformConcat(
-															  
-															  CGAffineTransformMakeScale(1.5, 1.5)
-															  
-															  , CGAffineTransformMakeRotation(deg90*3));
-		
-		
-		
-		for (int i = 0; i <= maxbullets; i++){
-			if ( ((bul*)[bry objectAtIndex:i]).k > -1){
-				[self bulletloop:((bul*)[bry objectAtIndex:i])];
-			}
-			((UIImageView*)[bdry objectAtIndex:i]).center = ((bul*)[bry objectAtIndex:i]).l;
-		}
-		
-		[self soundsloop];
-		
-		
-//	}
-
+    //	if (gamestate == 1 || gamestate == 3){
+    
+    //		if ( ((p*)[pry objectAtIndex:0]).l.y < weapon1dist){
+    //			((p*)[pry objectAtIndex:0]).weapon = 0;
+    //		}
+    //		if ( ((p*)[pry objectAtIndex:0]).l.y < weapon1dist){
+    //			((p*)[pry objectAtIndex:0]).weapon = 0;
+    //		}
+    //		if ( ((p*)[pry objectAtIndex:0]).l.y < weapon1dist){
+    //			((p*)[pry objectAtIndex:0]).weapon = 0;
+    //		}
+    
+    [self playerloop:((p*)[pry objectAtIndex:0])];
+    ((UIImageView*)[pdry objectAtIndex:0]).center = ((p*)[pry objectAtIndex:0]).l;
+    self.shipexhaust1.center = CGPointMake( ((p*)[pry objectAtIndex:0]).l.x, ((p*)[pry objectAtIndex:0]).l.y+40);
+    self.shipexhaust1.image = ((UIImageView *)[thrustrefarray objectAtIndex:((p*)[pry objectAtIndex:0]).cthrustanimf]).image;
+    
+    self.shipexhaust1.transform = CGAffineTransformConcat(
+                                                          
+                                                          CGAffineTransformMakeScale(3, 3)
+                                                          
+                                                          , CGAffineTransformMakeRotation(-deg90));
+    
+    
+    
+    [self playerloop:((p*)[pry objectAtIndex:1])];		
+    ((UIImageView*)[pdry objectAtIndex:1]).center = ((p*)[pry objectAtIndex:1]).l;		
+    
+    self.shipexhaust2.center = CGPointMake( ((p*)[pry objectAtIndex:1]).l.x, ((p*)[pry objectAtIndex:1]).l.y-40);
+    self.shipexhaust2.image = ((UIImageView *)[thrustrefarray objectAtIndex:((p*)[pry objectAtIndex:1]).cthrustanimf+30]).image;
+    
+    self.shipexhaust2.transform = CGAffineTransformConcat(
+                                                          
+                                                          CGAffineTransformMakeScale(1.5, 1.5)
+                                                          
+                                                          , CGAffineTransformMakeRotation(deg90*3));
+    
+    
+    
+    for (int i = 0; i <= maxbullets; i++){
+        if ( ((bul*)[bry objectAtIndex:i]).k > -1){
+            [self bulletloop:((bul*)[bry objectAtIndex:i])];
+        }
+        ((UIImageView*)[bdry objectAtIndex:i]).center = ((bul*)[bry objectAtIndex:i]).l;
+    }
+    
+    [self soundsloop];
+    
+    
+    //	}
+    
 	if (gamestate == 3){
 		[self countdown];	
 	}
@@ -1148,8 +1148,8 @@
 }
 
 -(void)resetships{
-	((p*)[pry objectAtIndex:0]).l = CGPointMake( ((p*)[pry objectAtIndex:0]).l.x,800);
-	((p*)[pry objectAtIndex:1]).l = CGPointMake( ((p*)[pry objectAtIndex:1]).l.x,145);
+	((p*)[pry objectAtIndex:0]).l = CGPointMake( ((p*)[pry objectAtIndex:0]).l.x,844);
+	((p*)[pry objectAtIndex:1]).l = CGPointMake( ((p*)[pry objectAtIndex:1]).l.x,180);
 	((p*)[pry objectAtIndex:0]).mtar = CGPointMake( ((p*)[pry objectAtIndex:0]).l.x, 1024);
 	((p*)[pry objectAtIndex:1]).mtar = CGPointMake( ((p*)[pry objectAtIndex:1]).l.x, 0);	
 	p1ships = shipreset;
@@ -1193,8 +1193,8 @@
 	((p*)[pry objectAtIndex:1]).mtar = CGPointMake(384,0);
 	
 	shipreset = 5;
-	((p*)[pry objectAtIndex:0]).l = CGPointMake(384,800);
-	((p*)[pry objectAtIndex:1]).l = CGPointMake(384,145);	
+	((p*)[pry objectAtIndex:0]).l = CGPointMake(384,864);
+	((p*)[pry objectAtIndex:1]).l = CGPointMake(384,160);	
 	[self resetships];
 	
 	((UIImageView*)[pdry objectAtIndex:0]).transform = CGAffineTransformConcat(CGAffineTransformMakeRotation(-deg90), 
@@ -1300,7 +1300,7 @@
 
 // Implement viewto do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {	
-	[[UIApplication sharedApplication] setStatusBarHidden:YES animated:NO];
+    //	[[UIApplication sharedApplication] setStatusBarHidden:YES animated:NO];
 	srandom(time(NULL));
 	p1hits = 0;
 	p2hits = 0;
@@ -1312,42 +1312,44 @@
 	
 	
 	int fontSize = 33;
-	p1label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,1024-400,600,50)];
+	int specialHeight = 20;
+	int bottomHeight = 45;
+	p1label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,1024-400+specialHeight,600,50)];
 	p1label.backgroundColor = [UIColor clearColor];
 	p1label.font = [UIFont systemFontOfSize:fontSize];
 	p1label.textColor = [UIColor whiteColor];
 	p1label.textAlignment = UITextAlignmentCenter;
-	p11label = [[UILabel alloc] initWithFrame:CGRectMake(384-400,1024-350,800,50)];
+	p11label = [[UILabel alloc] initWithFrame:CGRectMake(384-400,1024-350+specialHeight,800,50)];
 	p11label.backgroundColor = [UIColor clearColor];
 	p11label.font = [UIFont systemFontOfSize:fontSize];
 	p11label.textColor = [UIColor whiteColor];
 	p11label.textAlignment = UITextAlignmentCenter;
-	p111label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,1024-300,600,50)];
+	p111label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,1024-300+specialHeight,600,50)];
 	p111label.backgroundColor = [UIColor clearColor];
 	p111label.font = [UIFont systemFontOfSize:fontSize];
 	p111label.textColor = [UIColor whiteColor];
 	p111label.textAlignment = UITextAlignmentCenter;
-
+    
 	
-	p2label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,400-100,600,50)];
+	p2label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,400-100+specialHeight,600,50)];
 	p2label.backgroundColor = [UIColor clearColor];
 	p2label.font = [UIFont systemFontOfSize:fontSize];
 	p2label.textColor = [UIColor whiteColor];
 	p2label.textAlignment = UITextAlignmentCenter;
-	p22label = [[UILabel alloc] initWithFrame:CGRectMake(384-400,350-100,800,50)];
+	p22label = [[UILabel alloc] initWithFrame:CGRectMake(384-400,350-100+specialHeight,800,50)];
 	p22label.backgroundColor = [UIColor clearColor];
 	p22label.font = [UIFont systemFontOfSize:fontSize];
 	p22label.textColor = [UIColor whiteColor];
 	p22label.textAlignment = UITextAlignmentCenter;
-	p222label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,300-100,600,50)];
+	p222label = [[UILabel alloc] initWithFrame:CGRectMake(384-300,300-100+specialHeight,600,50)];
 	p222label.backgroundColor = [UIColor clearColor];
 	p222label.font = [UIFont systemFontOfSize:fontSize];
 	p222label.textColor = [UIColor whiteColor];
 	p222label.textAlignment = UITextAlignmentCenter;
-
+    
 	[self setIntroText];
 	
-		deg90 = 1.570796326794897;
+    deg90 = 1.570796326794897;
 	
 	p2label.transform = CGAffineTransformMakeRotation(deg90 * 2);
 	p22label.transform = CGAffineTransformMakeRotation(deg90 * 2);
@@ -1357,29 +1359,29 @@
 	[self.view addSubview:p111label];
 	[self.view addSubview:p22label];
 	[self.view addSubview:p222label];
-
+    
 	
-
-	UIView *bottomGreen = [[self makeZoneViewAtHeight:1024-85 withText:@"Move" andColor:0] retain];
+    
+	UIView *bottomGreen = [[self makeZoneViewAtHeight:1024-85+bottomHeight withText:@"Move" andColor:0] retain];
 	[self.view addSubview:bottomGreen];
 	
-	UIView *topGreen = [[self makeZoneViewAtHeight:-20 withText:@"Move" andColor:0] retain];
+	UIView *topGreen = [[self makeZoneViewAtHeight:-20+specialHeight withText:@"Move" andColor:0] retain];
 	topGreen.transform = CGAffineTransformMakeRotation(deg90*2);
 	[self.view addSubview:topGreen];
 	
 	
-	UIView *bottomBlue = [[self makeZoneViewAtHeight:1024-85-35 withText:@"Plasma" andColor:1] retain];
+	UIView *bottomBlue = [[self makeZoneViewAtHeight:1024-85-35+bottomHeight withText:@"Plasma" andColor:1] retain];
 	[self.view addSubview:bottomBlue];
 	
-	UIView *topBlue = [[self makeZoneViewAtHeight:0+35-20 withText:@"Plasma" andColor:1] retain];
+	UIView *topBlue = [[self makeZoneViewAtHeight:0+35-20+specialHeight withText:@"Plasma" andColor:1] retain];
 	topBlue.transform = CGAffineTransformMakeRotation(deg90*2);
 	[self.view addSubview:topBlue];
 	
 	
-	UIView *bottomRed = [[self makeZoneViewAtHeight:1024-85-35-35 withText:@"Rocket" andColor:2] retain];
+	UIView *bottomRed = [[self makeZoneViewAtHeight:1024-85-35-35+bottomHeight withText:@"Rocket" andColor:2] retain];
 	[self.view addSubview:bottomRed];
 	
-	UIView *topRed = [[self makeZoneViewAtHeight:0+35+35-20 withText:@"Rocket" andColor:2] retain];
+	UIView *topRed = [[self makeZoneViewAtHeight:0+35+35-20+specialHeight withText:@"Rocket" andColor:2] retain];
 	topRed.transform = CGAffineTransformMakeRotation(deg90*2);
 	[self.view addSubview:topRed];
 	
@@ -1387,25 +1389,26 @@
 	
 	self.healthbar1 = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
 	self.healthbar1.frame = CGRectMake(0,0,200,30);
-	self.healthbar1.center = CGPointMake(745+23,512-30);
+	self.healthbar1.center = CGPointMake(745+23+0,512-30);
 	self.healthbar1.transform = CGAffineTransformMakeRotation(-deg90);
+	self.healthbar1.center = CGPointMake(self.healthbar1.center.x, self.healthbar1.center.y+specialHeight);
 	self.healthbar1.progress = 1;
 	[self.view addSubview:self.healthbar1];
 	
 	self.healthbar2 = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
 	self.healthbar2.frame = CGRectMake(0,0,200,30);
-	self.healthbar2.center = CGPointMake(0,512-30);
+	self.healthbar2.center = CGPointMake(0,512-30+specialHeight);
 	self.healthbar2.transform = CGAffineTransformMakeRotation(deg90);
 	self.healthbar2.progress = 1;
 	[self.view addSubview:self.healthbar2];
 	
-	killlabel1 = [self makelabelat:CGRectMake(715,512,220,60)];
+	killlabel1 = [self makelabelat:CGRectMake(715,512+specialHeight,220,60)];
 	killlabel1.transform = CGAffineTransformMakeRotation(deg90);
 	[self.view addSubview:killlabel1];
 	killlabel1.text = @"0 - Ships - 0";
 	
 	
-	killlabel2 = [self makelabelat:CGRectMake(53,512,220,60)];
+	killlabel2 = [self makelabelat:CGRectMake(53,512+specialHeight,220,60)];
 	killlabel2.transform = CGAffineTransformMakeRotation(deg90 * 3);
 	[self.view addSubview:killlabel2];
 	killlabel2.text = @"0 - Ships - 0";
@@ -1421,7 +1424,7 @@
 	[self initializesounds];
 	
 	[self preparestats];
-//	[self readygame];
+    //	[self readygame];
 	gamestate = 3;
 	myTimer = [[NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(loop) userInfo:nil repeats:YES] retain];	
     [super viewDidLoad];
@@ -1470,43 +1473,15 @@
 	
 	
 	
-	if ( ((p*)[pry objectAtIndex:0]).mtar.y < 1024 - weapon1dist){
+	if ( ((p*)[pry objectAtIndex:0]).mtar.y < 1024 - 19){ //weapon1dist
 		((p*)[pry objectAtIndex:0]).pfire = 1;	
 		((p*)[pry objectAtIndex:0]).maxanimf = 16;
 	}
 	
-	if ( ((p*)[pry objectAtIndex:0]).mtar.y < 1024 - weapon2dist){
+	if ( ((p*)[pry objectAtIndex:0]).mtar.y < 1024 - 50){ //weapon2dist){
 		((p*)[pry objectAtIndex:0]).pfire = 2;	
 		((p*)[pry objectAtIndex:0]).maxanimf = 8;		
 	}
-	
-	
-	
-	//	if ( ((p*)[pry objectAtIndex:0]).mdown == 1){
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:0]).pmovpoint :((p*)[pry objectAtIndex:0]).pFlyL] <= buttondist){
-	//			((p*)[pry objectAtIndex:0]).pdir = -1;
-	//		}
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:0]).pmovpoint :((p*)[pry objectAtIndex:0]).pFlyR] <= buttondist){
-	//			((p*)[pry objectAtIndex:0]).pdir = 1;
-	//		}
-	//		
-	//	}
-	//	
-	//	if ( ((p*)[pry objectAtIndex:0]).fdown == 1){
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:0]).pfirepoint :((p*)[pry objectAtIndex:0]).pshootA ] <= buttondist){
-	//			((p*)[pry objectAtIndex:0]).pfire = 1;
-	//		}
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:0]).pfirepoint :((p*)[pry objectAtIndex:0]).pshootB ] <= buttondist){
-	//			((p*)[pry objectAtIndex:0]).pfire = 2;
-	//		}
-	//		
-	//	}
-	
-	
 	
 	
 	((p*)[pry objectAtIndex:1]).pdir = 0;
@@ -1527,35 +1502,6 @@
 		((p*)[pry objectAtIndex:1]).pfire = 2;	
 		((p*)[pry objectAtIndex:1]).maxanimf = 16;		
 	}
-	
-	//	if ( ((p*)[pry objectAtIndex:1]).mdown == 1){
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:1]).pmovpoint :((p*)[pry objectAtIndex:1]).pFlyL] <= buttondist){
-	//			((p*)[pry objectAtIndex:1]).pdir = -1;
-	//		}
-	//		
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:1]).pmovpoint :((p*)[pry objectAtIndex:1]).pFlyR] <= buttondist){
-	//			((p*)[pry objectAtIndex:1]).pdir = 1;
-	//		}
-	//	}
-	//	
-	//	if ( ((p*)[pry objectAtIndex:1]).fdown == 1){
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:1]).pfirepoint :((p*)[pry objectAtIndex:1]).pshootA ] <= buttondist){
-	//			((p*)[pry objectAtIndex:1]).pfire = 1;
-	//		}
-	//		
-	//		if ([self GetDist:((p*)[pry objectAtIndex:1]).pfirepoint :((p*)[pry objectAtIndex:1]).pshootB ] <= buttondist){
-	//			((p*)[pry objectAtIndex:1]).pfire = 2;
-	//		}
-	//		
-	
-	//	}
-	
-	
-	
-	
 	
 	if ( ((p*)[pry objectAtIndex:0]).canimf < ((p*)[pry objectAtIndex:0]).maxanimf){
 		((p*)[pry objectAtIndex:0]).canimf++;
@@ -1610,45 +1556,18 @@
 
 
 
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
 	
 	UITouch *touch = [touches anyObject];
 	gestureStartPoint = [touch locationInView:self.view];
 	
-	NSLog(@"Gesture Y %f",gestureStartPoint.y);
-	
-	//	if (gestureStartPoint.y < 230){
-	//		((p*)[pry objectAtIndex:0]).mtar = gestureStartPoint;
-	//	}
-	//	if (gestureStartPoint.y > 230){
-	//		((p*)[pry objectAtIndex:1]).mtar = gestureStartPoint;
-	//	}
-	if (gestureStartPoint.y < 90){ //512
-		((p*)[pry objectAtIndex:1]).mtar = gestureStartPoint;		
-		//		if (gestureStartPoint.x > 384){
-		//			
-		//			((p*)[pry objectAtIndex:1]).mdown = 1;
-		//			((p*)[pry objectAtIndex:1]).pmovpoint = gestureStartPoint;
-		//		}else{
-		//			((p*)[pry objectAtIndex:1]).fdown = 1;			
-		//			((p*)[pry objectAtIndex:1]).pfirepoint = gestureStartPoint;
-		//		}
-	}else if (gestureStartPoint.y > 929){
+	if (gestureStartPoint.y < 150){ //512
+		((p*)[pry objectAtIndex:1]).mtar = gestureStartPoint;        
+	}else if (gestureStartPoint.y > 860){
 		((p*)[pry objectAtIndex:0]).mtar = gestureStartPoint;
-		//		if (gestureStartPoint.x < 384){
-		//			((p*)[pry objectAtIndex:0]).mdown = 1;
-		//			((p*)[pry objectAtIndex:0]).pmovpoint = gestureStartPoint;
-		//		}else{
-		//			((p*)[pry objectAtIndex:0]).fdown = 1;			
-		//			((p*)[pry objectAtIndex:0]).pfirepoint = gestureStartPoint;
-		//		}	
-	}
-	
-	
-	
-	
+	}    
 }
+
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
 	
