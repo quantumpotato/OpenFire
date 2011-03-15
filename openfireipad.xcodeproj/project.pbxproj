@@ -374,6 +374,8 @@
 		BFF474CF122DF15500603D64 /* Whoosh03.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFF474CE122DF15500603D64 /* Whoosh03.caf */; };
 		BFF474DA122DF2E700603D64 /* Explo Classic.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFF474D8122DF2E700603D64 /* Explo Classic.caf */; };
 		BFF474DB122DF2E700603D64 /* explosion.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFF474D9122DF2E700603D64 /* explosion.caf */; };
+		BFF4F1FA132EE115003228E6 /* icon72.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF4F1F9132EE115003228E6 /* icon72.png */; };
+		BFF4F1FE132EE251003228E6 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFF4F1FD132EE251003228E6 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -755,6 +757,9 @@
 		BFF474CE122DF15500603D64 /* Whoosh03.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Whoosh03.caf; sourceTree = "<group>"; };
 		BFF474D8122DF2E700603D64 /* Explo Classic.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Explo Classic.caf"; sourceTree = "<group>"; };
 		BFF474D9122DF2E700603D64 /* explosion.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = explosion.caf; sourceTree = "<group>"; };
+		BFF4F1F9132EE115003228E6 /* icon72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon72.png; sourceTree = "<group>"; };
+		BFF4F1FD132EE251003228E6 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		BFF4F249132EE4E1003228E6 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -803,6 +808,9 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				BFF4F249132EE4E1003228E6 /* Entitlements.plist */,
+				BFF4F1FD132EE251003228E6 /* icon.png */,
+				BFF4F1F9132EE115003228E6 /* icon72.png */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -1641,6 +1649,8 @@
 				BFF474CF122DF15500603D64 /* Whoosh03.caf in Resources */,
 				BFF474DA122DF2E700603D64 /* Explo Classic.caf in Resources */,
 				BFF474DB122DF2E700603D64 /* explosion.caf in Resources */,
+				BFF4F1FA132EE115003228E6 /* icon72.png in Resources */,
+				BFF4F1FE132EE251003228E6 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1669,14 +1679,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/openfireipad/Classes/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/openfireipad/Entitlements.plist";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = openfireipad_Prefix.pch;
 				INFOPLIST_FILE = "openfireipad-Info.plist";
-				PRODUCT_NAME = openfireipad;
+				PRODUCT_NAME = "Openfire!";
 			};
 			name = Debug;
 		};
@@ -1684,7 +1694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/openfireipad/Classes/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "~/openfireipad/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = openfireipad_Prefix.pch;
@@ -1706,8 +1716,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "A617AA53-FE6E-4362-B420-43EB9202010B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A617AA53-FE6E-4362-B420-43EB9202010B";
+				PROVISIONING_PROFILE = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -1717,12 +1727,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = "~/openfireipad/Entitlements.plist";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = openfireipad_Prefix.pch;
 				INFOPLIST_FILE = "openfireipad-Info.plist";
 				PRODUCT_NAME = openfireipad;
+				PROVISIONING_PROFILE = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = AdHoc;
@@ -1732,14 +1744,14 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Chaione Inc";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Chaione Inc";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Anthony Broussard";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Anthony Broussard";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				PROVISIONING_PROFILE = "8B34DF3D-AF89-4C4E-AE3C-8CB3669842A1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8B34DF3D-AF89-4C4E-AE3C-8CB3669842A1";
+				PROVISIONING_PROFILE = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
 				SDKROOT = iphoneos3.2;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

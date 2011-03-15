@@ -42,14 +42,14 @@
     [super init];
 	
 	
-    NSString *const resourceDir = [[NSBundle mainBundle] resourcePath];
+   // NSString *const resourceDir = [[NSBundle mainBundle] resourcePath];
 	
-    NSString *const fullPath = [resourceDir stringByAppendingPathComponent:path];
+   // NSString *const fullPath = [resourceDir stringByAppendingPathComponent:path];
 	
-    NSURL *const url = [NSURL fileURLWithPath:fullPath];
+//    NSURL *const url = [NSURL fileURLWithPath:fullPath];
     
-    OSStatus errcode = AudioServicesCreateSystemSoundID((CFURLRef) url, &handle);
-    NSAssert1(errcode == 0, @"Failed to load sound: %@", path);
+//    OSStatus errcode = AudioServicesCreateSystemSoundID((CFURLRef) url, &handle);
+  //  NSAssert1(errcode == 0, @"Failed to load sound: %@", path);
     return self;
 }
 
@@ -1137,7 +1137,7 @@
 	gamestate = 2;
 	killlabel1.text = [NSString stringWithFormat:@"GET READY"];
 	killlabel2.text = [NSString stringWithFormat:@"GET READY"];	
-	gamestatetick = 50 * 6;
+	gamestatetick = 50 * 10;
 }
 
 -(void)readygame{
@@ -1177,7 +1177,7 @@
 	speed0 = 12; //12
 	speed1 = 6; //4
 	speed2 = 6; //4
-	hpreset = 12;
+	hpreset = 7;
 	((p*)[pry objectAtIndex:0]).ty = 460;
 	((p*)[pry objectAtIndex:1]).ty = 0;
 	
@@ -1192,7 +1192,7 @@
 	((p*)[pry objectAtIndex:0]).mtar = CGPointMake(384,1024);
 	((p*)[pry objectAtIndex:1]).mtar = CGPointMake(384,0);
 	
-	shipreset = 5;
+	shipreset = 3;
 	((p*)[pry objectAtIndex:0]).l = CGPointMake(384,864);
 	((p*)[pry objectAtIndex:1]).l = CGPointMake(384,160);	
 	[self resetships];
