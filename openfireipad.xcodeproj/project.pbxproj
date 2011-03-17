@@ -1733,8 +1733,6 @@
 				GCC_PREFIX_HEADER = openfireipad_Prefix.pch;
 				INFOPLIST_FILE = "openfireipad-Info.plist";
 				PRODUCT_NAME = openfireipad;
-				PROVISIONING_PROFILE = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E38007BE-3FEE-41EC-9E1E-156D6DD4D46C";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = AdHoc;

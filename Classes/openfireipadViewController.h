@@ -144,5 +144,7 @@
 -(IBAction)rematchButtonPressed:(id)sender;
 -(IBAction)exitButtonPressed:(id)sender;
 
+-(IBAction)firePlasma0;
+
 @end
 
